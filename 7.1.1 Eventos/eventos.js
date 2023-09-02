@@ -1,16 +1,16 @@
 
-
 function saludar() {
-    alert('Hola!')
+    alert('Hola!');
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-    const div = document.getElementById('miDiv');
-    div.addEventListener('click', () => {
-        alert('Soy el div!')
-    });
+const div = document.getElementById('miDiv');
+const btn = document.getElementById('btn');
+
+div.addEventListener('click', () => {
+    alert('Soy el div!')
 });
 
-
-
-
+btn.addEventListener('click', (event) => {
+    event.stopPropagation()
+    saludar()
+});
